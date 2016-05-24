@@ -1,0 +1,13 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>We are sorry, <small>but you just encounter an <bold>404 error</bold>.</small></h1>
+</div>
+
+<p>Error code : {{ code}}</p>
+<p>{{ exception.message }}</p>
+<p>We cannot found the asked ressource</p>
+
+{% endblock %}

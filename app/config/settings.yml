@@ -1,0 +1,27 @@
+env: dev
+
+database:
+    driver: pdo_mysql
+    host: 127.0.0.1
+    dbname: wardrobe
+    user: root
+    password: 
+
+swiftmailer:
+   host: smtp.provider.com
+   port: 25
+   username: username
+   password: password
+   encryption: null
+   auth_mode: null
+   transport: smtp
+   
+user:
+   mailer:
+       fromEmail:
+           address: no-reply@wardrobe.com
+           name: Wardrobe
+   emailConfirmation:
+       required: true
+   passwordReset:
+       tokenTTL: 86400

@@ -1,0 +1,34 @@
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+  	line-height: 1.42857143;
+  	color: #333;
+	background-color: #fff;
+}
+
+div#main {
+}
+
+header#header {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: #000;
+	color: #fff;
+	border-bottom: 10px solid #ff3c41;	
+	margin-bottom: 20px;
+}
+
+footer#footer {
+	background-color: #191919;
+	color: #fff;
+	padding-top: 25px;
+	padding-bottom: 50px;
+}
+
+section#content {
+}
+
+
+a.title:hover {
+	text-decoration: none;
+} 

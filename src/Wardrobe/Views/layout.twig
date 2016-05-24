@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="utf-8">
+        	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        	<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+			<link rel="icon" href="/favicon.ico" type="image/x-icon">
+			
+			<link rel="stylesheet" href="{{ app.request.basepath }}/lib/wardrobe/wardrobe.css" />
+            <link rel="stylesheet" href="{{ app.request.basepath }}/lib/normalize/4.1.1/normalize.css" />			                        
+            <link rel="stylesheet" href="{{ app.request.basepath }}/lib/font-awesome/4.6.1/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="{{ app.request.basepath }}/lib/bootstrap/3.3.6/css/bootstrap.min.css" />
+                                    
+			{% block style %}{% endblock style %}
+						            
+            <title>Wardrobe {% block title %}{% endblock title %}</title>
+            
+        {% endblock head %}
+    </head>
+	<body>
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button class="navbar-toggle collapsed" aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button">
+		                <span class="sr-only"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="{{ path('homepage') }}">
+		
+		                {% trans %}site_name{% endtrans %}
+						<small>- {% trans %}site_slogan{% endtrans %}</small>
+		            </a>
+		            
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		            <div class="navbar-form navbar-right">
+		            {% if not app.user %}
+						<a class="btn btn-primary" href="{{ path('user.login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;{% trans %}sign_in{% endtrans %}</a>
+						<a class="btn btn-primary" href="{{ path('user.register') }}">{% trans %}register{% endtrans %}</a>
+					{% else %}
+						<a class="btn btn-primary" href="{{ path('user.logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;{% trans %}sign_out{% endtrans %}</a>
+					{% endif %}
+		            </div>
+		        </div>
+		        <!--
+		
+		        /.navbar-collapse 
+		
+		        -->
+		    </div>
+		
+		</nav>
+	
+		
+					
+			
+		<div class="row">
+			<div class="col-md-8">
+				{% block content %}{% endblock content %}
+			</div>
+			<div class="col-md-4">
+				<div id="google">Publicitée</div>
+			</div>
+		</div>
+
+		
+			
+		<div class="container">
+		
+			<div class="row">
+				<div class="col-md-6">
+					<h2>Heading</h2>
+					<ul>
+						<li><a href="{{ path('privacy') }}">{% trans %}privacy_policy{% endtrans %}</a></li>
+						<li><a href="{{ path('faq') }}">{% trans %}faq{% endtrans %}</a></li>
+						<li><a href="{{ path('bug') }}">{% trans %}bug_report{% endtrans %}</a></li>
+						
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h2>Heading</h2>
+					<ul>
+						<li><a href="{{ path('contact') }}">{% trans %}contact{% endtrans %}</a></li>
+						<li><a href="{{ path('donate') }}">{% trans %}donate{% endtrans %}</a></li>
+						<li><a href="{{ path('accounting') }}">{% trans %}accounting{% endtrans %}</a></li>
+					</ul>
+				</div>
+			</div>
+			<footer>
+				<p>&copy; Copyright Wardrobe 2016</p>
+			</footer>
+		</div>
+		
+					
+		<script src="{{ app.request.basepath }}/lib/jquery/1.12.3/jquery-1.12.3.min.js"></script>
+        <script src="{{ app.request.basepath }}/lib/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        {% block javascript %}{% endblock javascript %}
+	</body>
+            
+            
+</html>

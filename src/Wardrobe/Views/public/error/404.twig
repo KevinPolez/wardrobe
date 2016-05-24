@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Oops<small>, you just encounter an horrible <bold>404 error</bold>.</small></h1>
+</div>
+
+<p>We cannot found the asked ressource. Please <a href="{{ path('bug') }}">report us</a> if you think it's necessary. Or, you can return to the <a href="{{ path('homepage') }}">homepage</a></p>
+
+<div class="well well-sm">
+
+<p>Error code : {{ code}}</p>
+<p>{{ exception.message }}</p>
+
+</div>
+{% endblock %}
